@@ -2,4 +2,3 @@
 
 Patile uygulaması okul projesi için yapılmıştır
 
-a
