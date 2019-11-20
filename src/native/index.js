@@ -23,14 +23,26 @@ export default class App extends React.Component {
     persistor: PropTypes.shape({}).isRequired,
   }
 
-  state = { loading: true }
+  state = { loading: false } //Yüklenme hatasını "False" yaparak buradan çözdük
 
   async componentWillMount() {
     this.fixTimerWarning();
     await Font.loadAsync({
-      Roboto: require('native-base/Fonts/Roboto.ttf'),
-      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
-      Ionicons: require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),
+      // sorun burasıydı, require.js eskiden çalışıyorken şimdi farklı bir path kullanıyor (path -> dosyanın sistemde bulunduğu yol)
+      // o yüzden hataya baktım mesela ->
+      // 'D:\projeler\patile\src\native\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts'
+      // buradan yüklemeye çalışıyor aslında patile'nin altında araması lazım node_modules'ü
+      // o yüzden
+      Roboto: require('../../node_modules/native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('../../node_modules/native-base/Fonts/Roboto_medium.ttf'),
+      // eskiden burası /@expo/vector-icons.... to
+      // üstte yazdığım sebepten ötürü dedim ki ../../node_modules altına bak. Yani hatalı baktığı:
+      // 'D:\projeler\patile\src\native\node_modules\@expo
+      // src\native kısmını fazladan ekliyor bi sebepten ötürü. Onu eklemesin diye iki tane yukarı çıkmasını söyledim:
+      // ..\..\ ekledim en başına, sonra dedim ki onun içinde node_modules var, işte aradığın kütüphane orada
+      // sonuç olarak @expo/vector-icons/bui.... başlayan icon yolunu
+      // ../../node_modules/@expo/vector-icons/buil... haline getirdim. üsttekiler için de aynı şey
+      Ionicons: require('../../node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),
     });
 
     this.setState({ loading: false });
