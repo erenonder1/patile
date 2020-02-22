@@ -14,6 +14,7 @@ class LeaderBoard extends Component {
     const {fetchPoints} = this.props;
     fetchPoints();
   }
+  
 
   render() {
     const {points} = this.props;
