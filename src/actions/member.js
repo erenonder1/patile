@@ -2,7 +2,7 @@ import ErrorMessages from '../constants/errors';
 import { Firebase, FirebaseRef } from '../lib/firebase';
 
 /**
-  * Kullanıcı'yı Firebase'e kayıt etme
+  * Kullanıcı'yı Firebase'in tablosuna ve kendi tablomuz olan users'a kaydediyoruz.
   */
 export function signUp(formData) {
   const {
@@ -35,8 +35,11 @@ export function signUp(formData) {
 }
 
 /**
-  * Get this User's Details
-  */
+ * Bizim oluşturduğumuz users tablosunun değiştiniğini dinleyen herkese haber veriyor
+ *
+ * @param dispatch
+ * @returns {((a: (firebase.database.DataSnapshot | null), b?: string) => any)|boolean}
+ */
 function getUserData(dispatch) {
   const UID = (
     FirebaseRef
@@ -94,7 +97,7 @@ export function login(formData) {
         .then(async (res) => {
           const userDetails = res && res.user ? res.user : null;
 
-          if (userDetails.uid) {
+          if (userDetails && userDetails.uid) {
             // Update last logged in data
             FirebaseRef.child(`users/${userDetails.uid}`).update({
               lastLoggedIn: Firebase.database.ServerValue.TIMESTAMP,

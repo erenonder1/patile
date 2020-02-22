@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Image, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Container } from 'native-base';
-import { Constants, Location, MapView, Permissions } from 'expo';
+import Constants from 'expo-constants';
+import MapView from 'react-native-maps';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Messages from './Messages';

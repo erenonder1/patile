@@ -5,6 +5,7 @@ import { Body, Card, CardItem, Container, Content, H3, Text } from 'native-base'
 import ErrorMessages from '../../constants/errors';
 import Error from './Error';
 import Spacer from './Spacer';
+import OpenURLButton from './OpenURLButton';
 
 const AccountView = ({
                        error,
@@ -32,13 +33,12 @@ const AccountView = ({
         <H3>
           {account.title}
         </H3>
+
         <Spacer size={15}/>
 
         <Card>
           <CardItem header bordered>
-            <Text>
-              {account.url}
-            </Text>
+            <OpenURLButton url={account.url}/>
           </CardItem>
         </Card>
         <Card>

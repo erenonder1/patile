@@ -4,6 +4,7 @@ export default {
   timeout: 'Sunucu bağlantısı başarısız. İnternet bağlantısını kontrol ediniz',
   invalidJson: 'Geçerli bir JSON cevabı alınamadı',
   pageNotFound: 'Sayfa bulunamadı',
+  urlCanNotBeOpened: 'Link açılamıyor',
 
   // Firebase hataları
   invalidFirebase: 'Firebase bağlantısı gerçekleştirilemedi',

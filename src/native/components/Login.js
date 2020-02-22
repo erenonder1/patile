@@ -18,13 +18,13 @@ class Login extends React.Component {
     success: PropTypes.string,
     loading: PropTypes.bool.isRequired,
     onFormSubmit: PropTypes.func.isRequired,
-  }
+  };
 
   static defaultProps = {
     error: null,
     success: null,
     member: {},
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -60,7 +60,7 @@ class Login extends React.Component {
               title="Hoşgeldiniz"
               content="Lütfen kullanıcı adı ve şifrenizi kullanarak giriş yapınız:"
             />
-            {error && <Messages message={error} />}
+            {error && <Messages type="error" message={error} />}
             {success && <Messages type="success" message={success} />}
           </View>
 

@@ -16,6 +16,7 @@ export function addFeed(formData) {
     // Form Doğrulamaları
 
     if (!grams) {
+      console.log('gram bulunamadı');
       return reject({ message: ErrorMessages.missingGrams });
     }
 
@@ -44,7 +45,7 @@ export function addFeed(formData) {
         longitude,
         time: new Date().getTime(),
       })
-      .then((snap) => { resolve({feed: snap.key}) });
+      .then((data) => { resolve({feed: data.key}) });
   }).catch((err) => {
     throw err.message;
   });
