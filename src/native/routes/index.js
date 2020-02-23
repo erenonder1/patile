@@ -32,10 +32,15 @@ import AccountViewComponent from '../components/Account';
 
 import LeaderBoardComponent from '../components/LeaderBoard';
 
+import PostsContainer from '../../containers/Posts';
+import PostsComponent from '../components/Posts';
+
 import PatiMap from '../components/PatiMap';
+import Posts from '../../containers/Posts';
 
 const Index = (
   <Stack hideNavBar>
+
     <Scene hideNavBar>
       <Tabs
         key="tabbar"
@@ -44,6 +49,14 @@ const Index = (
         showLabel={false}
         {...DefaultProps.tabProps}
       >
+        <Stack
+          key="popo"
+          title="Mükemmel Popolar "
+          icon={() => <Icon name="planet" {...DefaultProps.icons} />}
+          {...DefaultProps.navbarProps}
+        >
+          <Scene key="popo" component={PostsContainer} Layout={PostsComponent}/>
+        </Stack>
         <Stack
           key="home"
           title={AppConfig.appName.toUpperCase()}

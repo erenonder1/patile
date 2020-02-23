@@ -8,7 +8,7 @@ export default function getAccounts() {
     .on('value', (snapshot) => {
       const accounts = snapshot.val() || [];
 
-      return resolve(dispatch({
+      return resolve (dispatch({
         type: 'ACCOUNTS_REPLACE',
         data: accounts,
       }));

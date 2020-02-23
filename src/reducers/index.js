@@ -3,6 +3,7 @@ import recipes from './recipes';
 import accounts from './accounts';
 import feeds from './feeds';
 import points from './points';
+import posts from './posts';
 
 const rehydrated = (state = false, action) => {
   switch (action.type) {
@@ -15,6 +16,7 @@ const rehydrated = (state = false, action) => {
 
 export default {
   rehydrated,
+  posts,
   member,
   recipes,
   accounts,

@@ -9,8 +9,7 @@ class AccountListing extends Component {
     Layout: PropTypes.func.isRequired,
     accounts: PropTypes.arrayOf(PropTypes.shape()).isRequired,
     match: PropTypes.shape({ params: PropTypes.shape({}) }),
-    fetchAccounts: PropTypes.func.isRequired,
-  }
+    fetchAccounts: PropTypes.func.isRequired, }
 
   static defaultProps = {
     match: null,
@@ -24,9 +23,10 @@ class AccountListing extends Component {
   componentDidMount = () => this.fetchData();
 
   fetchData = (data) => {
-    const { fetchAccounts } = this.props;
+    const { fetchAccounts,} = this.props;
 
     this.setState({ loading: true });
+
 
     return fetchAccounts(data)
       .then(() => this.setState({

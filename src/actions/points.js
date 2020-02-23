@@ -7,8 +7,7 @@ export function getPoints() {
     return FirebaseRef.child('users')
       .on('value', (snapshot) => {
         const points = [];
-        console.log('action');
-        console.log(snapshot);
+        console.log(points);
         snapshot.forEach((user) => {
           points.push({ userName: user.val().firstName, highScore: user.val().patiPoints ? user.val().patiPoints : 0 });
         });
