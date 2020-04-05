@@ -1525,8 +1525,8 @@ acorn-walk@^6.0.1:
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-6.1.1.tgz#d363b66f5fac5f018ff9c3a1e7b6f8e310cc3913"
 
 acorn@^5.0.0, acorn@^5.5.3, acorn@^5.6.2:
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.4.tgz#3e8d8a9947d0599a1796d10225d7432f4a4acf5e"
 
 acorn@^6.0.1, acorn@^6.0.7:
   version "6.1.0"
@@ -9519,6 +9519,12 @@ react-native-keyboard-aware-scroll-view@0.8.0:
   dependencies:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
+
+react-native-leaderboard@^1.0.5:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-native-leaderboard/-/react-native-leaderboard-1.0.6.tgz#2ade5944aa4e5959d86770310139f1e3e5bc0b4b"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
