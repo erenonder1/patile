@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import MapView from 'react-native-maps';
-import carImage from '../../../images/app-icon.png';
+import carImage from '../../../images/full-food.png';
 
 export default class NavigationMap extends Component {
   constructor(props) {
@@ -51,7 +51,7 @@ export default class NavigationMap extends Component {
         <MapView
           ref={el => (this.map = el)}
           style={styles.flex}
-          minZoomLevel={15}
+          minZoomLevel={60}
           initialRegion={{
             ...this.state.curPos,
             latitudeDelta: this.state.latitudeDelta,

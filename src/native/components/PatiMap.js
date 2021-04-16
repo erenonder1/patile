@@ -15,7 +15,7 @@ import noFoodMarker from '../../images/no-food.png';
 import lessFoodMarker from '../../images/less-food.png';
 import { getFeeds } from '../../actions/feeds';
 
-const TIME_INTERVAL = 1000;
+const TIME_INTERVAL = 10000;
 const DISTANCE_INTERVAL = 5;
 
 // saniye
