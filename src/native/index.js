@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, StatusBar, YellowBox } from 'react-native';
-import { Font } from 'expo';
+import * as Font from 'expo-font';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Router, Stack } from 'react-native-router-flux';
@@ -38,12 +38,7 @@ export default class App extends React.Component {
 
   fixTimerWarning() {
     YellowBox.ignoreWarnings(['Setting a timer']);
-    const _console = _.clone(console);
-    console.warn = message => {
-      if (message.indexOf('Setting a timer') <= -1) {
-        _console.warn(message);
-      }
-    };
+
   }
 
   render() {

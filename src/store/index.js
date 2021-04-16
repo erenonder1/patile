@@ -1,11 +1,11 @@
 /* global window */
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistCombineReducers } from 'redux-persist';
-import storage from 'redux-persist/es/storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import thunk from 'redux-thunk';
 import reducers from '../reducers';
 
-const reduxPersistConfig = { key: 'root', storage, blacklist: [] };
+const reduxPersistConfig = { key: 'root', storage: AsyncStorage, blacklist: [] };
 
 const reducer = persistCombineReducers(reduxPersistConfig, reducers);
 
